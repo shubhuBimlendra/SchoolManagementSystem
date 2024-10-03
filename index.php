@@ -1,19 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>School Management Software</title>
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
-    <!-- Google Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
-    <!-- Bootstrap core CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" rel="stylesheet">
-</head>
-<body>
+<?php include('header.php'); ?>
 
      <!--Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark default-color">
@@ -52,6 +37,8 @@
       <ul class="navbar-nav ml-auto nav-flex-icons">
         
         <li class="nav-item dropdown">
+
+        <?php if(isset($_SESSION['login'])){ ?>
           <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-333" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-user mr-2"></i>Account
@@ -62,9 +49,12 @@
             <a class="dropdown-item" href="#">Another action</a>
             <a class="dropdown-item" href="logout.php">Logout</a>
           </div>
+          <?php } else { ?>
+          <a href="login.php" class="nav-link"><i class="fa fa-user mr-2"></i>Login</a>
+          <?php } ?>
         </li>
       </ul>
-    </div>
+    </div>      
   </nav>
   <!--/.Navbar -->
 
@@ -343,15 +333,4 @@
       Copyright 2020-2020 All Rights Reseved. <a href="#" class="text-light">School Management System</a>
     </div>
   </section>
-
-
-    <!-- JQuery -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
-    <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
-</body>
-</html>
+<?php include('footer.php'); ?>
